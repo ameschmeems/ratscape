@@ -1,35 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6da2htwr2m7"]
+[gd_scene load_steps=4 format=3 uid="uid://08bxsnn1djwt"]
 
+[ext_resource type="Texture2D" uid="uid://d12cr1se3orss" path="res://assets/textures/tile_0124.png" id="1_1prvt"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_4c0y0"]
-[ext_resource type="Texture2D" uid="uid://d3n8jqmcr2fks" path="res://icon.svg" id="1_qasad"]
-[ext_resource type="PackedScene" uid="uid://bnhvb0gd75i3y" path="res://scenes/abilities/bite/bite.tscn" id="3_ei0xh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_it618"]
-size = Vector2(127, 126)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8panq"]
+size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtfr3"]
-size = Vector2(112, 114)
-
-[node name="Player" type="CharacterBody2D"]
-scale = Vector2(0.5, 0.5)
-collision_layer = 2
-collision_mask = 5
+[node name="Player" type="Area2D"]
 script = ExtResource("1_4c0y0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_qasad")
+texture = ExtResource("1_1prvt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_it618")
+shape = SubResource("RectangleShape2D_8panq")
 
-[node name="Hurtbox" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(-2, -1)
-shape = SubResource("RectangleShape2D_dtfr3")
-
-[node name="Bite" parent="." instance=ExtResource("3_ei0xh")]
-position = Vector2(0, 94)
+[node name="RayCast2D" type="RayCast2D" parent="."]
