@@ -33,6 +33,4 @@ func move(dir):
 		global_position += inputs[dir] * tile_size
 		var decay_instance = decay_scene.instantiate()
 		decay_instance.global_position = old_global_position
-		print("Parent global_position: ", get_node("/root/Main").global_position)
-		print("Decay instance global_position: ", decay_instance.global_position)
 		get_node("/root/Main").add_child(decay_instance)

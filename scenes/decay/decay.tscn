@@ -7,6 +7,7 @@ size = Vector2(16, 16)
 size = Vector2(16, 16)
 
 [node name="Decay" type="StaticBody2D"]
+collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)

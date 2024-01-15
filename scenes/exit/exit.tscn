@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7fk68kejvqp2"]
+
+[ext_resource type="Script" path="res://scenes/exit/exit.gd" id="1_32dud"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_y04y7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4l7k"]
+size = Vector2(15, 15)
+
+[node name="Exit" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_32dud")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_y04y7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_w4l7k")

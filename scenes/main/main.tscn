@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0f8x0edlq838"]
+[gd_scene load_steps=5 format=3 uid="uid://d0f8x0edlq838"]
 
 [ext_resource type="PackedScene" uid="uid://08bxsnn1djwt" path="res://scenes/player/player.tscn" id="1_esvvk"]
 [ext_resource type="Texture2D" uid="uid://cgpv6d2r4amin" path="res://assets/textures/tile_0040.png" id="2_bmykq"]
+[ext_resource type="PackedScene" uid="uid://b7fk68kejvqp2" path="res://scenes/exit/exit.tscn" id="3_wlxrm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ni7xn"]
 size = Vector2(16, 16)
@@ -14,6 +15,10 @@ position = Vector2(120, 32)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(128, 72)
 zoom = Vector2(4.5, 4.5)
+
+[node name="Exit" parent="." instance=ExtResource("3_wlxrm")]
+position = Vector2(168, 88)
+player_pos = Array[Vector2]([Vector2(120, 32), Vector2(136, 32), Vector2(104, 32)])
 
 [node name="Wall" type="StaticBody2D" parent="."]
 position = Vector2(120, 72)
