@@ -1,5 +1,6 @@
 extends Area2D
 
+@export var teleporter: Teleporter
 
 @onready var decay_scene: PackedScene = preload("res://scenes/decay/decay.tscn")
 @onready var ray: RayCast2D = $RayCast2D
@@ -13,6 +14,8 @@ var inputs = {
 }
 
 func _ready():
+	if teleporter:
+		teleporter.teleported.connect(on_teleported)
 	global_position = global_position.snapped(Vector2.ONE * tile_size)
 	global_position += Vector2.ONE * tile_size / 2.0
 
@@ -34,3 +37,13 @@ func move(dir):
 		var decay_instance = decay_scene.instantiate()
 		decay_instance.global_position = old_global_position
 		get_node("/root/Main").add_child(decay_instance)
+
+func transport(pos: Vector2):
+	var old_global_position = global_position
+	global_position = pos
+	var decay_instance = decay_scene.instantiate()
+	decay_instance.global_position = old_global_position
+	get_node("/root/Main").call_deferred("add_child", decay_instance)
+
+func on_teleported(pos: Vector2):
+	transport(pos)

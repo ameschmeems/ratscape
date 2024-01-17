@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var player_pos: Array[Vector2]
+@export var teleporter: Teleporter
 
 @onready var player_scene: PackedScene = preload("res://scenes/player/player.tscn")
 
@@ -11,11 +12,11 @@ func _ready():
 
 func on_area_entered(area: Area2D):
 	current_player += 1
-	print(current_player)
 	if current_player == 3:
 		get_tree().reload_current_scene()
 		return
 	area.queue_free()
 	var new_player = player_scene.instantiate()
+	new_player.teleporter = teleporter
 	new_player.set_deferred("global_position", player_pos[current_player])
 	get_node("/root/Main").call_deferred("add_child", new_player)
