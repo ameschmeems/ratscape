@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr1k20bhb1jpo"]
+
+[ext_resource type="Script" path="res://scenes/directional_pad/directional_pad.gd" id="1_lsrkl"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kqjwa"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qn4my"]
+size = Vector2(15, 15)
+
+[node name="DirectionalPad" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_lsrkl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+texture = SubResource("PlaceholderTexture2D_kqjwa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qn4my")
