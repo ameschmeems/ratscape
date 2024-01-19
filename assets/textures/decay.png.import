@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d12cr1se3orss"
-path="res://.godot/imported/tile_0124.png-29813fc704fc7c8dc4fee820f391bb24.ctex"
+uid="uid://bva8bf4udeju6"
+path="res://.godot/imported/decay.png-c89669b7f957e0723814042658b5060a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/tile_0124.png"
-dest_files=["res://.godot/imported/tile_0124.png-29813fc704fc7c8dc4fee820f391bb24.ctex"]
+source_file="res://assets/textures/decay.png"
+dest_files=["res://.godot/imported/decay.png-c89669b7f957e0723814042658b5060a.ctex"]
 
 [params]
 

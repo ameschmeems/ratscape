@@ -1,7 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bx70m8ml0anev"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kwbpp"]
-size = Vector2(16, 16)
+[ext_resource type="Texture2D" uid="uid://csii58xyg6bwx" path="res://assets/textures/door_red.png" id="1_sfcep"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jhdlk"]
 size = Vector2(15, 15)
@@ -10,7 +9,7 @@ size = Vector2(15, 15)
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_kwbpp")
+texture = ExtResource("1_sfcep")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jhdlk")

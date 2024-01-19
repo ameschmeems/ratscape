@@ -13,7 +13,6 @@ collision_mask = 2
 script = ExtResource("1_lsrkl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0, 0, 0, 1)
 texture = SubResource("PlaceholderTexture2D_kqjwa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

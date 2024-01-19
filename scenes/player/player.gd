@@ -13,6 +13,7 @@ var inputs = {
 	"up": Vector2.UP,
 	"down": Vector2.DOWN
 }
+var moving = false
 
 func _ready():
 	if teleporters:
@@ -30,7 +31,7 @@ func _process(_delta):
 
 func _unhandled_input(event):
 	for dir in inputs.keys():
-		if event.is_action_pressed(dir):
+		if !moving && event.is_action_pressed(dir):
 			move(dir)
 
 func move(dir) -> bool:
@@ -56,6 +57,8 @@ func on_teleported(pos: Vector2):
 
 func on_launched(dir: String):
 	var valid = true
+	moving = true
 	while (valid):
 		valid = move(dir)
 		await get_tree().create_timer(0.2).timeout
+	moving = false
