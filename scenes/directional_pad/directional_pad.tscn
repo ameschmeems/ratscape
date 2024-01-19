@@ -1,9 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dr1k20bhb1jpo"]
 
 [ext_resource type="Script" path="res://scenes/directional_pad/directional_pad.gd" id="1_lsrkl"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kqjwa"]
-size = Vector2(16, 16)
+[ext_resource type="Texture2D" uid="uid://dj1xbjqcu86wo" path="res://assets/textures/directional_pad.png" id="2_wpaou"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qn4my"]
 size = Vector2(15, 15)
@@ -13,7 +11,7 @@ collision_mask = 2
 script = ExtResource("1_lsrkl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_kqjwa")
+texture = ExtResource("2_wpaou")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qn4my")
