@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bktggf03f26eh"]
+
+[ext_resource type="TileSet" uid="uid://bt5umhgkjuu02" path="res://resources/tileset.tres" id="1_vgina"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_vgina")
+format = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(128, 72)
+zoom = Vector2(4.5, 4.5)

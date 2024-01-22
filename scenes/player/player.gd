@@ -22,8 +22,6 @@ func _ready():
 	if directionals:
 		for directional in directionals:
 			directional.launched.connect(on_launched)
-	global_position = global_position.snapped(Vector2.ONE * tile_size)
-	global_position += Vector2.ONE * tile_size / 2.0
 
 func _process(_delta):
 	if Input.is_action_just_pressed("restart"):
@@ -42,7 +40,7 @@ func move(dir) -> bool:
 		global_position += inputs[dir] * tile_size
 		var decay_instance = decay_scene.instantiate()
 		decay_instance.global_position = old_global_position
-		get_node("/root/Main").call_deferred("add_child", decay_instance)
+		get_parent().call_deferred("add_child", decay_instance)
 	return !ray.is_colliding()
 
 func transport(pos: Vector2):
@@ -50,7 +48,7 @@ func transport(pos: Vector2):
 	global_position = pos
 	var decay_instance = decay_scene.instantiate()
 	decay_instance.global_position = old_global_position
-	get_node("/root/Main").call_deferred("add_child", decay_instance)
+	get_parent().call_deferred("add_child", decay_instance)
 
 func on_teleported(pos: Vector2):
 	transport(pos)
