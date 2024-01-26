@@ -14,6 +14,7 @@ var inputs = {
 	"down": Vector2.DOWN
 }
 var moving = false
+var current_dir: String
 
 func _ready():
 	if teleporters:
@@ -56,7 +57,11 @@ func on_teleported(pos: Vector2):
 func on_launched(dir: String):
 	var valid = true
 	moving = true
+	current_dir = dir
 	while (valid):
+		if current_dir != dir:
+			return
 		valid = move(dir)
 		await get_tree().create_timer(0.2).timeout
+	current_dir = ""
 	moving = false
